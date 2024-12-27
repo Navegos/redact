@@ -1,4 +1,5 @@
 # redact
+
 Utilities to redact Go strings for confidentiality
 
 ![Build Status](https://github.com/Navegos/redact/actions/workflows/ci.yaml/badge.svg?branch=master)
@@ -6,4 +7,4 @@ Utilities to redact Go strings for confidentiality
 
 Some explanations about how this is used in e.g. neoDB:
 
-https://wiki.crdb.io/wiki/spaces/CRDB/pages/1824817806/Log+and+error+redactability
+<https://wiki.crdb.io/wiki/spaces/CRDB/pages/1824817806/Log+and+error+redactability>
