@@ -57,7 +57,6 @@ type SafeValue = i.SafeValue
 // SafeMessager is an alternative to SafeFormatter used in previous
 // versions of neoDB.
 // NB: this interface is obsolete. Use SafeFormatter instead.
-// TODO(knz): Remove this.
 type SafeMessager = i.SafeMessager
 
 // SafePrinter is a stateful helper that abstracts an output stream in

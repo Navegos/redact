@@ -95,31 +95,41 @@ type SafeWriter interface {
 type SafeString string
 
 // SafeValue makes SafeString a SafeValue.
-func (SafeString) SafeValue() {}
+func (SafeString) SafeValue() {
+	// - method is empty for future use
+}
 
 // SafeInt represents an integer that is not a sensitive value.
 type SafeInt int64
 
 // SafeValue makes SafeInt a SafeValue.
-func (SafeInt) SafeValue() {}
+func (SafeInt) SafeValue() {
+	// - method is empty for future use
+}
 
 // SafeUint represents an integer that is not a sensitive value.
 type SafeUint uint64
 
 // SafeValue makes SafeUint a SafeValue.
-func (SafeUint) SafeValue() {}
+func (SafeUint) SafeValue() {
+	// - method is empty for future use
+}
 
 // SafeFloat represents a floating-point value that is not a sensitive value.
 type SafeFloat float64
 
 // SafeValue makes SafeFloat a SafeValue.
-func (SafeFloat) SafeValue() {}
+func (SafeFloat) SafeValue() {
+	// - method is empty for future use
+}
 
 // SafeRune aliases rune. See the explanation for SafeString.
 type SafeRune rune
 
 // SafeValue makes SafeRune a SafeValue.
-func (SafeRune) SafeValue() {}
+func (SafeRune) SafeValue() {
+	// - method is empty for future use
+	}
 
 // SafeValue is a marker interface to be implemented by types that
 // alias base Go types and whose natural representation via Printf is
@@ -145,7 +155,6 @@ type SafeValue interface {
 // SafeMessager is an alternative to SafeFormatter used in previous
 // versions of neoDB.
 // NB: this interface is obsolete. Use SafeFormatter instead.
-// TODO(knz): Remove this.
 type SafeMessager = interface {
 	SafeMessage() string
 }

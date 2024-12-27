@@ -279,11 +279,15 @@ func (c compose) SafeFormat(w SafePrinter, _ rune) {
 
 type safe string
 
-func (safe) SafeValue() {}
+func (safe) SafeValue() {
+	// - method is empty for future use
+}
 
 type safeint int
 
-func (safeint) SafeValue() {}
+func (safeint) SafeValue() {
+	// - method is empty for future use
+}
 
 func TestTransform(t *testing.T) {
 	testData := []struct {
@@ -524,7 +528,9 @@ func TestPrinterSpaceOmission(t *testing.T) {
 
 type safeInt int
 
-func (safeInt) SafeValue() {}
+func (safeInt) SafeValue() {
+	// - method is empty for future use
+}
 
 func TestHelperForErrorf(t *testing.T) {
 	origErr := errors.New("small\nuniverse")
@@ -560,7 +566,10 @@ type safestringer struct{ s string }
 var _ SafeValue = (*safestringer)(nil)
 var _ fmt.Stringer = (*safestringer)(nil)
 
-func (*safestringer) SafeValue()       {}
+func (*safestringer) SafeValue() {
+	// - method is empty for future use
+}
+
 func (s *safestringer) String() string { return s.s }
 
 type fmtformatter struct{ s string }
@@ -574,7 +583,10 @@ type safefmtformatter struct{ s string }
 var _ SafeValue = (*safefmtformatter)(nil)
 var _ fmt.Formatter = (*safefmtformatter)(nil)
 
-func (*safefmtformatter) SafeValue()                   {}
+func (*safefmtformatter) SafeValue() {
+	// - method is empty for future use
+}
+
 func (s *safefmtformatter) Format(w fmt.State, _ rune) { fmt.Fprint(w, s.s) }
 
 type panicObj1 struct{ s string }
@@ -594,7 +606,10 @@ type safepanicObj1 struct{ s string }
 var _ SafeValue = (*safepanicObj1)(nil)
 var _ fmt.Stringer = (*safepanicObj1)(nil)
 
-func (*safepanicObj1) SafeValue()       {}
+func (*safepanicObj1) SafeValue() {
+	// - method is empty for future use
+}
+
 func (p *safepanicObj1) String() string { panic(p.s) }
 
 type safepanicObj2 struct{ s string }
@@ -602,7 +617,10 @@ type safepanicObj2 struct{ s string }
 var _ SafeValue = (*safepanicObj2)(nil)
 var _ fmt.Formatter = (*safepanicObj2)(nil)
 
-func (*safepanicObj2) SafeValue()               {}
+func (*safepanicObj2) SafeValue() {
+	// - method is empty for future use
+}
+
 func (p *safepanicObj2) Format(fmt.State, rune) { panic(p.s) }
 
 type panicObj3 struct{ s string }
