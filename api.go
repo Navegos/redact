@@ -14,6 +14,7 @@
 // Package actor provides the structures for representing an actor who has
 // access to resources.
 
+// Package mypkg provides utilities to redact Go strings for confidentiality.
 package redact
 
 import (
